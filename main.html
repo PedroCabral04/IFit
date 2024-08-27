@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFit - Sua Academia Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="navbar" class="top-bar">
+        <div class="nav-bar">
+            <img class="logo" src="./images/ifit_high_resolution_logo_transparent_1.png">
+            <div role="button" class="top-bar-text button" onclick="topBarClickInicio()">Início</div>
+            <div role="button" class="top-bar-text button" onclick="topBarClickSobre()">Sobre</div>
+            <div role="button" class="top-bar-text button" onclick="topBarClickPlanos()">Planos</div>
+            <div role="button" class="top-bar-text button" onclick="topBarClickUnidades()">Unidades</div>
+            <div role="button" class="top-bar-text button" onclick="topBarClickContato()">Contato</div>
+            <div role="button" class="top-bar-text button login" onclick="topBarClickLogin()">Login</div>
+        </div>
+    </div>
+    <div id="navbar-spacer"></div>
+
+    <main>
+        <div class="welcome">
+            <div class="Title" style="width: 100%; text-align: center">
+                <span class="welcome-head">Seja bem-vindo(a) à </span>
+                <span id="welcome-ifit">IFit</span><span style="color: #F5F5F5; font-size: 40px; font-family: Archivo Black; font-weight: 400; line-height: 48px; word-wrap: break-word">!</span></div>
+            <p id="welcome-sub">Conte conosco em sua busca pela vida saudável</p>
+            <a class="button welcome-button">Conheça nossos planos</a>
+        </div>
+
+        <section class="planos-section">
+            <div class="planos-content">
+                <div class="planos-text">
+                    <h2 class="planos-head">Nossos planos!</h2>
+                    <p class="planos-subtitulo">Você pode escolher o plano que melhor se encaixa na sua rotina</p>
+                    <a class="button planos-button">Ou entre em contato se preferir</a>
+                </div>
+                <div class="planos-logo-container">
+                    <img class="planos-logo" src="./images/image_container.png" alt="IFit Logo">
+                </div>
+            </div>
+            <div class="planos-container">
+                <div class="plano">
+                    <img class="plano-img" src="./images/treadmill-icon.png" alt="Esteira">
+                    <h3 class="plano-nome">Aula Teste Grátis</h3>
+                    <p class="plano-desc">Faça seu cadastro na recepção!</p>
+                </div>
+                <div class="plano">
+                    <img class="plano-img" src="./images/muscles-icon.png" alt="Músculos">
+                    <h3>Plano Intermediário</h3>
+                    <p>A partir de R$99,99 por mês</p>
+                </div>
+                <div class="plano">
+                    <img class="plano-img" src="./images/bodybuilder-icon.png" alt="Fisiculturista">
+                    <h3>Plano Avançado</h3>
+                    <p>A partir de 139,99 por mês</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dicas snap">
+            <h2>Dicas Fitness</h2>
+            <p>Descubra algumas dicas úteis para seu dia a dia no nosso blog</p>
+            <button>Saiba Mais</button>
+            <div class="dicas-container">
+                <div class="dica">
+                    <img src="exercicio-icon.png" alt="Exercício">
+                    <h3>5 Exercícios Simples</h3>
+                    <p>Aprenda os 5 melhores exercícios para um treino de corpo inteiro</p>
+                </div>
+                <div class="dica">
+                    <img src="treino-icon.png" alt="Treino">
+                    <h3>Guia de Treino</h3>
+                    <p>Descubra como planejar seu treino da melhor forma</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback snap">
+            <h2>Feedback de clientes</h2>
+            <p>Leia o que nossos clientes têm a dizer sobre nosso serviço</p>
+            <div class="feedback-container">
+                <div class="feedback-item">
+                    <img src="client1.jpg" alt="Sávio Martins">
+                    <p>Ótimos professores e equipamentos de ponta!</p>
+                    <h4>Sávio Martins</h4>
+                </div>
+                <div class="feedback-item">
+                    <img src="client2.jpg" alt="Pedro Cabral">
+                    <p>Muita variedade e ambiente confortável</p>
+                    <h4>Pedro Cabral</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato snap">
+            <h2>Entre em Contato</h2>
+            <p>Tem alguma dúvida? Nos mande uma mensagem que teremos o prazer de te ajudar</p>
+            <form>
+                <input type="text" placeholder="Nome Completo">
+                <input type="email" placeholder="Seu email">
+                <textarea placeholder="Sua mensagem"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="mapa">
+        </section>
+    </main>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+        <script>
+            window.onload = function() {
+              window.scrollTo(0, 0);
+              history.pushState(null, null, location.href);
+            };
+          </script>
+
+    <a onclick="topFunction()" id="backtop" title="Go to top">Top</a>
+
+    <footer>
+        <p>&copy; 2024 iFit. Todos Direitos Reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,337 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --gray-color: #454545;
+}
+
+.snap {
+    scroll-snap-align: start;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+  
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+}
+
+.top-bar {
+    width: 100%; 
+    height: 3.8rem; 
+    background: #50A060; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    justify-content: space-between; 
+    align-items: center; 
+    display: inline-flex;
+}
+
+.top-bar-text {
+    background-color: transparent;
+    color:#F5F5F5;
+    font-size: 1.2rem;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 24px;
+    word-wrap: break-word;
+    border: none;
+    cursor: pointer;
+}
+
+
+.nav-bar {
+    width: 100%;
+    height: 100%; 
+    background: #50A060; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 8rem; 
+    display: inline-flex;
+}
+
+.logo {
+    width: 6rem; 
+    height: 4rem; 
+    display:block;
+    border-radius: 100px;
+}
+
+.welcome {
+    width: 100%;
+    height: 100%;
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+    background: linear-gradient(180deg, rgba(69, 69, 69, 0.68) 0%, #454545 100%); 
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    flex-direction:column;
+}
+
+.welcome-head {
+    color: #F5F5F5; 
+    font-size: 3.25rem; 
+    font-family: "Archivo Black"; 
+    font-weight: 400; 
+    line-height: 3rem; 
+    word-wrap: break-word
+}
+
+#welcome-ifit {
+    font-size: 3.25rem; 
+    font-family: "Archivo Black"; 
+    font-weight: 400; 
+    line-height: 3rem; 
+    word-wrap: break-word;
+    color: var(--primary-color);
+}
+
+.welcome-button {
+    display: flex;
+    width: 12rem;
+    padding: 0.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #F5F5F5;
+    background-color: var(--primary-color);
+    font-size: 14px;
+    font-family: "Archivo Black";
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 1rem;
+}
+
+#welcome-sub {
+    color: white;
+    font-size: 1.4rem;
+    font-family: Archivo Black;
+    font-weight: 400;
+    line-height: 24px;
+    word-wrap: break-word
+}
+
+.planos-section {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    display: flex;
+    padding: 3.75rem 10.625rem;
+    flex-direction: column;
+    align-self: stretch;
+    margin-top: 0;
+    background: url(./images/Products.png) lightgray 50% / cover no-repeat;
+    background-position: 50% 50%;
+}
+
+.planos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    width: 100%;
+}
+
+.planos-logo-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.planos-logo {
+    width: 20%; 
+    height: auto;
+}
+
+.planos-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 3.75rem;
+    align-self: stretch;
+}
+
+.planos-head {
+    color: #FFF;
+    font-family: "Archivo Black";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 4rem;
+}
+
+.planos-subtitulo {
+    width: 100%;
+    color: #FFF;
+    font-family: "Archivo Black";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2rem;
+    white-space: nowrap;
+}
+
+.planos-button {
+    margin-top: 3rem;
+    font-size: 14px;
+    font-family: "Archivo Black";
+    font-weight: 400;
+    line-height: 24px;
+    color:white;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    width: 15rem;
+    padding: 0.75rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.plano {
+    display: flex;
+    gap: 2.5rem;
+    align-self: stretch;
+    width: 21.25rem;
+    height: 21.25rem;
+    align-items: flex-start;
+    border-radius: 31.25rem;
+    background: #FFF;
+}
+
+.plano-img {
+    align-self:normal;
+    background-repeat: no-repeat;
+    background-size:cover;
+    transition: ease-out transform 0.3s;
+}
+
+.plano-img:hover {
+    transform: scale(0.8);
+}
+
+.plano-nome {
+    text-align: center;
+    font-family: "Archivo Black";
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 100% */
+}
+
+.plano-desc {
+    color: #FFF;
+    text-align: center;
+    font-family: "Archivo Black";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+}
+#backtop {
+    display: inline-block;
+    background-color: #FF9800;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+  
+#backtop:hover {
+    cursor: pointer;
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+#backtop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#navbar-spacer {
+    padding-top: 3.75rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+}
+
+.button {
+    transition: color 0.3s ease-in-out, transform 0.7s;
+} .button:hover {
+    transform: scale(1.1);
+    color: var(--gray-color);
+}
+
+.planos-container, .dicas-container, .feedback-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.dica, .feedback-item {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+}
