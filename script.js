@@ -1,13 +1,18 @@
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-100px";
+document.addEventListener("DOMContentLoaded", function() {
+  var prevScrollpos = window.pageYOffset;
+  var navbar = document.getElementById("navbar");
+
+  window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+          navbar.style.top = "0";
+      } else {
+          navbar.style.top = "-100px"; // Ajuste se necessário
+      }
+      prevScrollpos = currentScrollPos;
   }
-  prevScrollpos = currentScrollPos;
-}
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -28,19 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
   const zoomOptions = document.querySelector('.zoom-options');
   const zoomInButton = document.querySelector('.zoom-in');
   const zoomOutButton = document.querySelector('.zoom-out');
+  const mainContent = document.querySelector('.main-content'); // Seleciona o conteúdo principal
 
+  // Alterna a visibilidade das opções de zoom
   zoomToggle.addEventListener('click', function() {
       zoomOptions.style.display = zoomOptions.style.display === 'block' ? 'none' : 'block';
   });
 
+  // Função para ajustar o zoom do conteúdo principal usando a propriedade `zoom`
   function setZoom(scale) {
-      document.body.style.transform = `scale(${scale})`;
-      document.body.style.transformOrigin = '0 0'; // Define a origem de escala
-      document.body.style.width = `${100 / scale}%`; // Ajusta a largura para evitar barra de rolagem horizontal
+      mainContent.style.zoom = scale; // Usa a propriedade `zoom` para ajustar o nível de zoom
   }
 
-  let currentZoom = 1; 
+  let currentZoom = 1; // Zoom padrão (100%)
 
+  // Evento de clique para aumentar o zoom
   zoomInButton.addEventListener('click', function() {
       if (currentZoom < 2) { // Limite superior do zoom (200%)
           currentZoom += 0.1;
@@ -48,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 
+  // Evento de clique para diminuir o zoom
   zoomOutButton.addEventListener('click', function() {
       if (currentZoom > 0.5) { // Limite inferior do zoom (50%)
           currentZoom -= 0.1;

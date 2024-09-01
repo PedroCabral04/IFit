@@ -74,11 +74,16 @@ body {
 
 .top-bar {
     background-color: var(--primary-color);
-    padding: 0.5rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 }
 
 .nav-bar {
+    top: 0; 
+    width: 100%; 
+    transition: top 0.3s; 
+    background-color: var(--primary-color); 
+    z-index: 1000; 
+    line-height: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -268,6 +273,7 @@ body {
     padding: 0 20px;
 }
 
+/* Estilos para o widget de zoom */
 .zoom-widget {
     position: fixed;
     bottom: 20px;
@@ -288,9 +294,9 @@ body {
 }
 
 .zoom-options {
-    display: none; 
+    display: none; /* Escondido por padrão */
     position: absolute;
-    bottom: 50px; 
+    bottom: 50px; /* Ajuste conforme necessário */
     right: 0;
     background-color: var(--primary-color);
     border-radius: 5px;
@@ -310,7 +316,6 @@ body {
 .zoom-options button:hover {
     color: var(--secondary-color);
 }
-
 
 form {
     display: flex;
