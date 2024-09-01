@@ -112,7 +112,7 @@ body {
 }
 
 .planos-section {
-    background-image: url('/images/Products.png');
+    background-image: url("/images/Products.png");
     background-size: cover;
     background-position: center;
     color: white;
