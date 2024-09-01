@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFit - Academia</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header id="navbar" class="top-bar">
+    <header id="navbar" class="top-bar font-archivo">
         <nav class="nav-bar container">
             <img src="./images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" class="logo">
             <div class="nav-links">
-                <a href="#inicio" class="top-bar-text">Início</a>
-                <a href="#sobre" class="top-bar-text">Sobre</a>
-                <a href="#planos" class="top-bar-text">Planos</a>
-                <a href="#unidades" class="top-bar-text">Unidades</a>
-                <a href="#contato" class="top-bar-text">Contato</a>
-                <a href="#login" class="top-bar-text">Login</a>
+                <a role="button" class="top-bar-button">Início</a>
+                <a role="button" class="top-bar-button">Sobre</a>
+                <a role="button" class="top-bar-button">Planos</a>
+                <a role="button" class="top-bar-button">Unidades</a>
+                <a role="button" class="top-bar-button">Contato</a>
+                <a role="button" class="top-bar-button">Login</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" class="welcome">
+        <section id="inicio" class="welcome font-archivo">
             <div class="container">
                 <h1 class="welcome-head">Seja bem-vindo à <span id="welcome-ifit">IFit</span>!</h1>
                 <p id="welcome-sub">Conte conosco em sua busca pela vida saudável</p>
@@ -30,7 +34,7 @@
             </div>
         </section>
 
-        <section id="planos" class="planos-section">
+        <section id="planos" class="planos-section font-archivo">
             <div class="container">
                 <div class="planos-content">
                     <div class="planos-desc">
@@ -39,30 +43,35 @@
                         <a href="#contato" class="button">Ou entre em contato se preferir</a>
                     </div>
                     <div class="planos-logo-container">
-                        <img src="./images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" class="planos-logo">
+                        <img src="./images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" id="planos-logo">
                     </div>
                 </div>
                 <div class="planos-container">
-                    <div class="plano">
-                        <img src="./images/treadmill-icon.png" alt="Esteira" class="plano-img">
+                    <div class="plano-wrapper">
+                        <div class="plano">
+                            <img src="./images/treadmill-icon.png" alt="Esteira" class="plano-img">
+                        </div>
                         <h3 class="plano-nome">Aula Teste Grátis</h3>
                         <p class="plano-desc">Faça seu cadastro na recepção!</p>
                     </div>
-                    <div class="plano">
-                        <img src="./images/muscles-icon.png" alt="Músculos" class="plano-img">
+                    <div class="plano-wrapper">
+                        <div class="plano">
+                            <img src="./images/muscles-icon.png" alt="Músculos" class="plano-img">
+                        </div>
                         <h3 class="plano-nome">Plano Intermediário</h3>
                         <p class="plano-desc">A partir de R$99,99 por mês</p>
                     </div>
-                    <div class="plano">
-                        <img src="./images/bodybuilder-icon.png" alt="Fisiculturista" class="plano-img" id="plano-avancado">
+                    <div class="plano-wrapper">
+                        <div class="plano">
+                            <img src="./images/bodybuilder-icon.png" alt="Fisiculturista" class="plano-img" id="plano-avancado">
+                        </div>
                         <h3 class="plano-nome">Plano Avançado</h3>
                         <p class="plano-desc">A partir de R$139,99 por mês</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="dicas" class="dicas">
+        <section id="dicas" class="dicas font-roboto">
             <div class="container">
                 <div class="dicas-container">
                     <img src="./images/image_3.png" alt="Dicas Fitness" id="dica-img1">
@@ -91,18 +100,18 @@
             </div>
         </section>
 
-        <section id="feedback" class="feedback">
+        <section id="feedback" class="feedback font-roboto">
             <div class="container">
                 <h2>Feedback de clientes</h2>
                 <p>Leia o que nossos clientes têm a dizer sobre nosso serviço</p>
                 <div class="feedback-container">
                     <div class="feedback-item">
-                        <img src="./images/client1.jpg" alt="Sávio Martins">
+                        <img src="./images/image_1.png" alt="Sávio Martins">
                         <p>Ótimos professores e equipamentos de ponta!</p>
                         <h4>Sávio Martins</h4>
                     </div>
                     <div class="feedback-item">
-                        <img src="./images/client2.jpg" alt="Pedro Cabral">
+                        <img src="./images/image_22.png" alt="Pedro Cabral">
                         <p>Muita variedade e ambiente confortável</p>
                         <h4>Pedro Cabral</h4>
                     </div>
@@ -110,7 +119,7 @@
             </div>
         </section>
 
-        <section id="contato" class="contato">
+        <section id="contato" class="contato font-roboto">
             <div class="container">
                 <h2>Entre em Contato</h2>
                 <p>Tem alguma dúvida? Nos mande uma mensagem que teremos o prazer de te ajudar</p>

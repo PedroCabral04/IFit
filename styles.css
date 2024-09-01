@@ -6,6 +6,16 @@
     --gray-color: #454545;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +23,18 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+}
+
+.font-archivo {
+    font-family: "Archivo Black"; 
+    font-weight: 400; 
+}
+
+.font-roboto {
+    font-family: "Roboto"; 
+    font-weight: 400; 
 }
 
 .container {
@@ -30,21 +49,35 @@ body {
     color: white;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
+    margin-top: 2rem;
     font-size: 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease-in-out, transform 0.7s;
 }
 
 .button:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
+    transform: scale(1.1);
+    color: var(--text-color);
+}
+
+.top-bar-button {
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.7s;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1.5rem;
+} .top-bar-button:hover {
+    transform: scale(1.1);
+    color: var(--gray-color);
 }
 
 .top-bar {
     background-color: var(--primary-color);
     padding: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
 }
 
 .nav-bar {
@@ -56,18 +89,6 @@ body {
 
 .logo {
     height: 40px;
-}
-
-.top-bar-text {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.top-bar-text:hover {
-    color: var(--background-color);
 }
 
 .welcome {
@@ -101,24 +122,29 @@ body {
     flex-wrap: wrap;
 }
 
-.planos-desc {
-    max-width: 50%;
-}
-
 .planos-head {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
-.planos-logo {
-    max-width: 150px;
+#planos-logo {
+    max-width: 200px;
 }
 
 .planos-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 4rem;
+    margin-top: 8rem;
+    gap: 12rem;
+}
+
+.plano-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    text-align: center;
 }
 
 .plano {
@@ -127,12 +153,9 @@ body {
     width: 200px;
     height: 200px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 1rem;
-    margin: 1rem;
     transition: transform 0.3s ease;
 }
 
@@ -141,18 +164,18 @@ body {
 }
 
 .plano-img {
-    max-width: 80px;
-    margin-bottom: 1rem;
+    max-width: 150px;
 }
 
 .plano-nome {
     color: var(--primary-color);
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
 
 .plano-desc {
     font-size: 0.9rem;
-    color: var(--text-color);
+    color: white;
 }
 
 .dicas {
@@ -164,6 +187,7 @@ body {
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
+    margin-bottom: 7rem;
 }
 
 #dica-img1 {
