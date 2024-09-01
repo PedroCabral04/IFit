@@ -1,0 +1,416 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --gray-color: #454545;
+    --font-size-base: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+}
+
+.font-archivo {
+    font-family: "Archivo Black"; 
+    font-weight: 400; 
+}
+
+.font-roboto {
+    font-family: "Roboto"; 
+    font-weight: 400; 
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.7s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    color: var(--text-color);
+}
+
+.top-bar-button {
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out, transform 0.7s;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+} .top-bar-button:hover {
+    transform: scale(1.1);
+    color: var(--gray-color);
+}
+
+.top-bar {
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.logo {
+    height: 40px;
+}
+
+.welcome {
+    background-color: var(--gray-color);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.welcome-head {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#welcome-ifit {
+    color: var(--primary-color);
+}
+
+.planos-section {
+    background-image: url('/images/Products.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 0;
+}
+
+.planos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.planos-head {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#planos-logo {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.planos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8rem;
+    gap: 12rem;
+}
+
+.plano-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -2rem;
+    text-align: center;
+}
+
+.plano {
+    background-color: white;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.plano-img:hover {
+    transform: scale(1.17);
+}
+
+.plano-img {
+    max-width: 140px;
+    transition: transform 0.3s ease;
+}
+
+.plano-nome {
+    color: var(--primary-color);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.plano-desc {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.dicas {
+    padding: 4rem 0;
+}
+
+.dicas-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 7rem;
+}
+
+#dica-img1 {
+    max-width: 100%;
+    height: auto;
+}
+
+.dicas-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+#dicas-head {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.artigos-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.artigo-container {
+    flex-basis: calc(50% - 1rem);
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.artigo-img {
+    max-width: 80px;
+    margin-right: 1rem;
+}
+
+.feedback {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.feedback-item {
+    background-color: white;
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 300px;
+    margin-bottom: 1rem;
+}
+
+.feedback-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.contato {
+    max-width: 600px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.zoom-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.zoom-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.zoom-options {
+    display: none; 
+    position: absolute;
+    bottom: 50px; 
+    right: 0;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.zoom-options button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.zoom-options button:hover {
+    color: var(--secondary-color);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@media (max-width: 1200px) {
+    :root {
+        --font-size-base: 15px;
+    }
+
+    #planos-logo {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --font-size-base: 14px;
+    }
+
+    #planos-logo {
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 13px;
+    }
+
+    #planos-logo {
+        visibility: hidden;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+    
+    .planos-desc {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .planos-logo {
+        margin: 0 auto;
+    }
+    
+    .dicas-container {
+        flex-direction: column;
+    }
+    
+    .artigo-container {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-base: 13px;
+    }
+
+    #planos-logo {
+        max-width: 140px;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+    
+    .planos-desc {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .planos-logo {
+        margin: 0 auto;
+    }
+    
+    .dicas-container {
+        flex-direction: column;
+    }
+    
+    .artigo-container {
+        flex-basis: 100%;
+    }
+}

@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333333;
+    --text-color: #333;
+    --background-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    font-family: 'Roboto', sans-serif; 
+    color: var(--text-color);
+    height: 100%;
+}
+
+header {
+    background-color: var(--primary-color);
+}
+
+.main-contact {
+    flex: 1;
+}
+
+.logo {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+.hero {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 0;
+}
+
+.form-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.form-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 150px;
+}
+
+.btn {
+    background-color: #000;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column;
+    }
+    
+    .form-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+    
+    .btn {
+        align-self: stretch;
+    }
+}

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFit - Contato</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Archivo+Black&display=swap" rel="stylesheet">
+    <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contato.css">
-
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <header id="navbar" class="top-bar font-archivo">
@@ -24,29 +23,30 @@
         </nav>
     </header>
 
-    <main class="main-contact">
-        <section class="hero">
-            <div class="container">
-                <h1>Entre em contato</h1>
-                <p>Alguma dúvida mande uma mensagem</p>
-            </div>
-        </section>
+    <section id="login" class="login font-roboto">
+        <div class="container">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <input type="text" name="username" placeholder="Nome" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit" class="button">Entrar</button>
+            </form>
+            <p>Não tem uma conta? <a href="#register" class="button">Cadastre-se</a></p>
+        </div>
+    </section>
+    
+    <section id="register" class="register font-roboto">
+        <div class="container">
+            <h2>Cadastro</h2>
+            <form action="register.php" method="post">
+                <input type="text" name="username" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="Seu email" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit" class="button">Cadastrar</button>
+            </form>
+        </div>
+    </section>
 
-        <section class="container">
-            <div class="contact-form">
-                <div class="form-text">
-                    <h2>Entre em contato</h2>
-                    <p>Caso necessite de ajuda com algo a mais</p>
-                </div>
-                <form>
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Sua mensagem" required></textarea>
-                    <button type="submit" class="btn">Enviar</button>
-                </form>
-            </div>
-        </section>
-    </main>
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
@@ -57,9 +57,7 @@
       <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
       </script>
-
-    <footer>
-        <p>Copyright © 2024 IFit. Todos Direitos Reservados.</p>
-    </footer>
+    
+    
 </body>
 </html>
