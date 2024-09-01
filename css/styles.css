@@ -21,6 +21,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     font-size: var(--font-size-base);
+    padding-top: 4rem;
 }
 
 .font-archivo {
@@ -112,7 +113,7 @@ body {
 }
 
 .planos-section {
-    background-image: url("/images/Products.png");
+    background-image: url("/images/planos-fundo.png");
     background-size: cover;
     background-position: center;
     color: white;
@@ -316,6 +317,17 @@ body {
 .zoom-options button:hover {
     color: var(--secondary-color);
 }
+
+#navbar {
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0; /* Inicia visível no topo */
+    width: 100%; /* Ocupa toda a largura da página */
+    transition: top 0.3s; /* Adiciona uma transição suave */
+    background-color: var(--primary-color); /* Cor de fundo (opcional) */
+    z-index: 1000; /* Garante que a navbar fique sobre outros elementos */
+    margin-bottom: 10rem;
+}
+  
 
 form {
     display: flex;
