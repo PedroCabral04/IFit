@@ -1,15 +1,28 @@
+#register {
+    visibility: hidden;
+}
 
+body {
+    background-color: #454545;
+
+}
 
 .login, .register {
-    max-width: 600px;
-    margin: 4rem auto;
+    font-family: "Roboto";
+    max-width: 800px;
+    margin: 10% auto;
     text-align: center;
     padding: 0 20px;
 }
 
+.login p {
+    color: white;
+}
+
 .login h2, .register h2 {
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 1rem;
+    font-size: 3rem;
 }
 
 .login form, .register form {
@@ -21,7 +34,7 @@
 
 .login input, .register input {
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 3px;
     width: 100%;
 }
@@ -38,4 +51,20 @@
 
 .login button:hover, .register button:hover {
     background-color: var(--primary-color);
+}
+
+.logbutton {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+} .logbutton:hover {
+    color:#333;
 }

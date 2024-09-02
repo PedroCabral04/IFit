@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Archivo+Black&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>IFit - Login</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
@@ -23,15 +23,27 @@
         </nav>
     </header>
 
-    <section id="login" class="login font-roboto">
+    <button id="menu-button" class="menu-button">☰</button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar font-archivo">
+        <a href="index.html">Início</a>
+        <a href="#">Sobre</a>
+        <a href="planos.html">Planos</a>
+        <a href="#">Unidades</a>
+        <a href="contato.html">Contato</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <section id="login" class="login font-roboto background">
         <div class="container">
             <h2>Login</h2>
             <form action="login.php" method="post">
                 <input type="text" name="username" placeholder="Nome" required>
                 <input type="password" name="password" placeholder="Senha" required>
-                <button type="submit" class="button">Entrar</button>
+                <button type="submit" class="logbutton">Entrar</button>
             </form>
-            <p>Não tem uma conta? <a href="#register" class="button">Cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="#register" class="logbutton">Cadastre-se</a></p>
         </div>
     </section>
     
@@ -42,7 +54,7 @@
                 <input type="text" name="username" placeholder="Nome" required>
                 <input type="email" name="email" placeholder="Seu email" required>
                 <input type="password" name="password" placeholder="Senha" required>
-                <button type="submit" class="button">Cadastrar</button>
+                <button type="submit" class="logbutton">Cadastrar</button>
             </form>
         </div>
     </section>
@@ -58,6 +70,6 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
       </script>
     
-    
+    <script src="script.js"></script>
 </body>
 </html>

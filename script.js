@@ -1,3 +1,4 @@
+//FUNÇÃO PARA HEADER SUBIR E DESCER
 document.addEventListener("DOMContentLoaded", function() {
   var prevScrollpos = window.pageYOffset;
   var navbar = document.getElementById("navbar");
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-
+// FUNÇÃO DAS PAGINAS
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.nav-links a');
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })
 
+//FUNÇÃO WIDGET ZOOM
 document.addEventListener('DOMContentLoaded', function() {
   const zoomToggle = document.querySelector('.zoom-toggle');
   const zoomOptions = document.querySelector('.zoom-options');
@@ -62,4 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
           setZoom(currentZoom);
       }
   });
+});
+
+//FUNÇÃO SIDEBAR
+document.getElementById('menu-button').addEventListener('click', function() {
+  document.getElementById('sidebar').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('hidden');
 });
