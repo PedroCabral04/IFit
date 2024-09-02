@@ -162,6 +162,7 @@ body {
     position: relative; 
     color: white;
     padding: 4rem 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Adiciona um fundo escuro semitransparente */
 }
 
 .background-image {
