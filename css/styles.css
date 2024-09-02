@@ -159,11 +159,19 @@ body {
 }
 
 .planos-section {
-    background-image: url("/images/planos-fundo.png");
-    background-size: cover;
-    background-position: center;
+    position: relative; 
     color: white;
     padding: 4rem 0;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .planos-content {

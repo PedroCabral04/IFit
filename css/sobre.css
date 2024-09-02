@@ -1,0 +1,43 @@
+.sobre-intro {
+    background-color: var(--gray-color);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.sobre-historia, .sobre-fundadores, .sobre-exclusividades {
+    padding: 4rem 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.sobre-historia h2, .sobre-fundadores h2, .sobre-exclusividades h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.fundador-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.fundador-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.fundador-info {
+    max-width: 600px;
+}
+
+.sobre-exclusividades ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sobre-exclusividades li {
+    margin-bottom: 1rem;
+}
