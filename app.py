@@ -5,14 +5,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask import flash
 
 app = Flask(__name__)
-app.secret_key = 'f3cfe9ed8fae309f02079dbf'
+app.secret_key = 
 
 # Configuração do Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'pedroscabral04@gmail.com'
-app.config['MAIL_PASSWORD'] = 'dbll dqhy fqys unoe'
+app.config['MAIL_USERNAME'] = 
+app.config['MAIL_PASSWORD'] = 
 mail = Mail(app)
 
 # Configuração do banco de dados
