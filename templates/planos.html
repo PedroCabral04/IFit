@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFit - Planos</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Archivo+Black&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/planos.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/planos.css') }}">
 </head>
 <body class="main-content">
     <header id="navbar" class="top-bar font-archivo">
         <nav class="nav-bar container">
-            <img src="./images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" class="logo">
+            <img src="/static/images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" class="logo">
             <div class="nav-links">
-                <a href="index.html" role="button" class="top-bar-button">Início</a>
-                <a href="sobre.html" role="button" class="top-bar-button">Sobre</a>
-                <a href="planos.html" role="button" class="top-bar-button">Planos</a>
-                <a href="#" role="button" class="top-bar-button">Unidades</a>
-                <a href="contato.html" role="button" class="top-bar-button">Contato</a>
-                <a href="login.html" role="button" class="top-bar-button">Login</a>
+                <a href="{{ url_for('index') }}" role="button" class="top-bar-button">Início</a>
+                <a href="{{ url_for('sobre') }}" role="button" class="top-bar-button">Sobre</a>
+                <a href="{{ url_for('planos') }}" role="button" class="top-bar-button">Planos</a>
+                <a href="{{ url_for('contato') }}" role="button" class="top-bar-button">Contato</a>
+                {% if 'username' in session %}
+                    <a href="{{ url_for('logout') }}" class="top-bar-button">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="top-bar-button">Login</a>
+                {% endif %}
             </div>
         </nav>
     </header>
@@ -27,25 +30,33 @@
 
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar font-archivo">
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="planos.html">Planos</a>
-        <a href="#">Unidades</a>
-        <a href="contato.html">Contato</a>
-        <a href="login.html">Login</a>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+        <a href="{{ url_for('planos') }}">Planos</a>
+        <a href="{{ url_for('contato') }}">Contato</a>
+        {% if 'username' in session %}
+            <a href="{{ url_for('logout') }}" class="top-bar-button">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="top-bar-button">Login</a>
+        {% endif %}
     </div>
 
     <main>
         <section class="container">
             <div class="plan">
                 <div class="plan-info">
-                    <img src="./images/bodybuilder-icon.png" alt="Plano Avançado" class="plan-icon">
+                    <img src="/static/images/bodybuilder-icon.png" alt="Plano Avançado" class="plan-icon">
                     <div class="plan-details">
                         <h2>Plano Avançado</h2>
                         <p>Aproveite todos os benefícios disponíveis!</p>
+                        <p>Apenas R$139,99 por mês!</p>
                     </div>
                 </div>
-                <a href="login.html" class="btn">Contrate agora</a>
+                {% if 'username' in session %}
+                    <a href="{{ url_for('pagamento', plano='avancado') }}" class="btn">Contrate agora</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="btn">Contrate agora</a>
+                {% endif %}
             </div>
         </section>
 
@@ -54,17 +65,17 @@
                 <h2>Benefícios</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <img src="./images/avancado1.png" alt="Treinador Especializado" class="benefit-icon">
+                        <img src="/static/images/avancado1.png" alt="Treinador Especializado" class="benefit-icon">
                         <h3>Treinador Especializado</h3>
                         <p>Tenha ajuda profissional!</p>
                     </div>
                     <div class="benefit-item">
-                        <img src="./images/avancado2.png" alt="Equipamentos Incríveis" class="benefit-icon">
+                        <img src="/static/images/avancado2.png" alt="Equipamentos Incríveis" class="benefit-icon">
                         <h3>Equipamentos Incríveis</h3>
                         <p>Melhores equipamentos do mercado</p>
                     </div>
                     <div class="benefit-item">
-                        <img src="./images/avancado3.png" alt="Eventos e promoções" class="benefit-icon">
+                        <img src="/static/images/avancado3.png" alt="Eventos e promoções" class="benefit-icon">
                         <h3>Eventos e promoções</h3>
                         <p>Atividades exclusivas</p>
                     </div>
@@ -75,14 +86,20 @@
         <section class="container">
             <div class="plan">
                 <div class="plan-info">
-                    <img src="./images/muscles-icon.png" alt="Plano Intermediário" class="plan-icon">
+                    <img src="/static/images/muscles-icon.png" alt="Plano Intermediário" class="plan-icon">
                     <div class="plan-details">
                         <h2>Plano Intermediário</h2>
                         <p>Tenha acesso à nossas unidades</p>
+                        <p>Apenas R$99,99 por mês!</p>
                     </div>
                 </div>
-                <a href="login.html" class="btn">Contrate agora</a>
+                {% if 'username' in session %}
+                    <a href="{{ url_for('pagamento', plano='intermediario') }}" class="btn">Contrate agora</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="btn">Contrate agora</a>
+                {% endif %}
             </div>
+            
         </section>
 
         <section class="benefits">
@@ -90,17 +107,17 @@
                 <h2>Benefícios</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <img src="./images/med1.png" alt="Acesso Total" class="benefit-icon">
+                        <img src="/static/images/med1.png" alt="Acesso Total" class="benefit-icon">
                         <h3>Acesso Total</h3>
                         <p>Treine a hora que quiser</p>
                     </div>
                     <div class="benefit-item">
-                        <img src="./images/med2.png" alt="Guia de Treino Básico" class="benefit-icon">
+                        <img src="/static/images/med2.png" alt="Guia de Treino Básico" class="benefit-icon">
                         <h3>Guia de Treino Básico</h3>
                         <p>Rotina semanal acompanhada por um profissional</p>
                     </div>
                     <div class="benefit-item">
-                        <img src="./images/med3.png" alt="Outras modalidades" class="benefit-icon">
+                        <img src="/static/images/med3.png" alt="Outras modalidades" class="benefit-icon">
                         <h3>Outras modalidades*</h3>
                         <p>*Disponíveis por valor complementar</p>
                     </div>
@@ -133,6 +150,7 @@
     <footer>
         <p>© 2024 IFit. Todos direitos reservados.</p>
     </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
 </body>
-<script src="./script.js"></script>
 </html>

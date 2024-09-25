@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - IFit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Archivo+Black&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+    <header id="navbar" class="top-bar font-archivo">
+        <nav class="nav-bar container">
+            <img src="{{ url_for('static', filename='images/ifit_high_resolution_logo_transparent_1.png') }}"
+                alt="IFit Logo" class="logo">
+            <div class="nav-links">
+                <a href="{{ url_for('index') }}" role="button" class="top-bar-button">Início</a>
+                <a href="{{ url_for('sobre') }}" role="button" class="top-bar-button">Sobre</a>
+                <a href="{{ url_for('planos') }}" role="button" class="top-bar-button">Planos</a>
+                <a href="{{ url_for('contato') }}" role="button" class="top-bar-button">Contato</a>
+                <a href="{{ url_for('login') }}" role="button" class="top-bar-button">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <button id="menu-button" class="menu-button">☰</button>
+
+    <section id="register" class="register font-roboto">
+        <div class="container">
+            <h2>Cadastro</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="{{ url_for('register') }}" method="post" id="register-form">
+                <input type="text" name="username" placeholder="Nome" required>
+                <input type="email" name="email" id="email" placeholder="Seu email" required>
+                <span id="email-error" style="color: red;"></span>
+                <input type="password" name="password" placeholder="Senha" required>
+                <button type="submit" class="logbutton" id="submit-btn">Cadastrar</button>
+            </form>
+            <p>Já tem uma conta? <a id="show-login" class="logbutton" href="{{ url_for('login') }}">Voltar ao Login</a>
+            </p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remover mensagens flash após 5 segundos
+            setTimeout(function() {
+                var flashMessages = document.querySelectorAll('.alert');
+                flashMessages.forEach(function(message) {
+                    message.style.display = 'none';
+                });
+            }, 5000);
+    
+            // Limpar mensagens de erro ao enviar o formulário
+            document.getElementById('register-form').addEventListener('submit', function() {
+                document.getElementById('email-error').textContent = '';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFit - Contato</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Archivo+Black&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contato.css') }}">
 
 </head>
 <body>
     <header id="navbar" class="top-bar font-archivo">
         <nav class="nav-bar container">
-            <img src="./images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" class="logo">
+            <img src="/static/images/ifit_high_resolution_logo_transparent_1.png" alt="IFit Logo" class="logo">
             <div class="nav-links">
-                <a href="index.html" role="button" class="top-bar-button">Início</a>
-                <a href="sobre.html" role="button" class="top-bar-button">Sobre</a>
-                <a href="planos.html" role="button" class="top-bar-button">Planos</a>
-                <a href="#" role="button" class="top-bar-button">Unidades</a>
-                <a href="contato.html" role="button" class="top-bar-button">Contato</a>
-                <a href="login.html" role="button" class="top-bar-button">Login</a>
+                <a href="{{ url_for('index') }}" role="button" class="top-bar-button">Início</a>
+                <a href="{{ url_for('sobre') }}" role="button" class="top-bar-button">Sobre</a>
+                <a href="{{ url_for('planos') }}" role="button" class="top-bar-button">Planos</a>
+                <a href="{{ url_for('contato') }}" role="button" class="top-bar-button">Contato</a>
+                {% if 'username' in session %}
+                    <a href="{{ url_for('logout') }}" class="top-bar-button">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="top-bar-button">Login</a>
+                {% endif %}
             </div>
         </nav>
     </header>
@@ -28,15 +31,18 @@
 
     <!-- Sidebar -->
     <div id="sidebar" class="sidebar font-archivo">
-        <a href="index.html">Início</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="planos.html">Planos</a>
-        <a href="#">Unidades</a>
-        <a href="contato.html">Contato</a>
-        <a href="login.html">Login</a>
+        <a href="{{ url_for('index') }}">Início</a>
+        <a href="{{ url_for('sobre') }}">Sobre</a>
+        <a href="{{ url_for('planos') }}">Planos</a>
+        <a href="{{ url_for('contato') }}">Contato</a>
+        {% if 'username' in session %}
+            <a href="{{ url_for('logout') }}" class="top-bar-button">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}" class="top-bar-button">Login</a>
+        {% endif %}
     </div>
 
-    <main class="main-contact">
+    <main class="main-contact main-content">
         <section class="hero">
             <div class="container">
                 <h1>Entre em contato</h1>
@@ -50,10 +56,10 @@
                     <h2>Entre em contato</h2>
                     <p>Caso necessite de ajuda com algo a mais</p>
                 </div>
-                <form>
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Sua mensagem" required></textarea>
+                <form action="/contato" method="POST">
+                    <input type="text" id="name" name="name" placeholder="Nome" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <textarea placeholder="Sua mensagem" id="message" name="message" required></textarea>
                     <button type="submit" class="btn">Enviar</button>
                 </form>
             </div>
@@ -84,6 +90,6 @@
     <footer>
         <p>Copyright © 2024 IFit. Todos Direitos Reservados.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
